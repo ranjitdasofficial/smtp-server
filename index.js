@@ -4,7 +4,7 @@ const SMTPServer = require("smtp-server").SMTPServer;
 const server = new SMTPServer({
     allowInsecureAuth: true,
     authOptional: true,
-    onConnect(session, callback) {
+    onConnect(session, callback) {  
         console.log("Connected");
         return callback();
     },
@@ -26,3 +26,9 @@ const server = new SMTPServer({
 
         
 })
+
+
+server.listen(25,()=>{
+    console.log("Server started");
+}
+)
